@@ -41,7 +41,7 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
                       'assets/images/background_overlay.png',
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 1,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                     ),
                   ),
                   Align(
@@ -50,7 +50,7 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
                       'assets/images/emogi.svg',
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 1,
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.cover,
                     ),
                   ),
                   Align(
