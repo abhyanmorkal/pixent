@@ -63,9 +63,6 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
                           Container(
                             width: MediaQuery.of(context).size.width,
                             height: 184,
-                            decoration: BoxDecoration(
-                              color: Color(0x00FFBE0B),
-                            ),
                             child: Image.asset(
                               'assets/images/Text_Logo.png',
                               width: 324,
@@ -78,9 +75,7 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
                             child: Container(
                               width: 100,
                               height: 100,
-                              decoration: BoxDecoration(
-                                color: Color(0x00FFBE0B),
-                              ),
+                              
                               child: SvgPicture.asset(
                                 'assets/images/Logo.svg',
                                 width: 100,

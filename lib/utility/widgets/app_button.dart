@@ -67,7 +67,7 @@ class AppButtonDesingOne extends StatelessWidget {
             );
           },
           action: () async {
-            await Future.delayed(const Duration(seconds: 2), (onPressed));
+            await Future.delayed(const Duration(seconds: 1), (onPressed));
           },
         ),
       ),

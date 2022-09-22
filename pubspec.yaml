@@ -41,6 +41,7 @@ dependencies:
   cloud_firestore: ^3.4.8
   firebase_auth: ^3.6.2
   firebase_core: ^1.20.0
+  flutter_screenutil: ^5.5.4
 
 dev_dependencies:
   flutter_test:
@@ -100,7 +101,10 @@ flutter:
     - family: FONTH
       fonts:
         - asset: assets/font/FONTH.ttf
-        
+
+    - family: Modak
+      fonts:
+        - asset: assets/font/Modak-Regular.ttf    
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
