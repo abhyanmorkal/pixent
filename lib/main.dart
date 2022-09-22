@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pixent/screen/login/login_option.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:pixent/screen/login_otion2.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,8 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Login_option_(),
+    return  GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+
+      
+      initialRoute: "/",
+      getPages: [
+        GetPage(name: "/", page: (() => const Login_option_()))
+      ],
+      
     );
   }
 }

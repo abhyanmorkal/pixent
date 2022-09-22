@@ -1,7 +1,15 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:slide_action/slide_action.dart';
+import 'package:pixent/screen/login/sign_in.dart';
+import 'package:pixent/utility/widgets/app_button.dart';
+import 'package:pixent/utility/color.dart';
+
+import 'login/sign_up.dart';
 
 class Login_option_ extends StatefulWidget {
   const Login_option_({super.key});
@@ -78,7 +86,7 @@ class _Login_option_State extends State<Login_option_> {
                 ),
                 Container(
                     alignment: AlignmentDirectional.topStart,
-                    padding: EdgeInsets.only(left: 35),
+                    padding: EdgeInsets.only(left: 35, top: 5),
                     height: 100,
                     width: MediaQuery.of(context).size.width,
                     // color: Colors.white,
@@ -89,135 +97,35 @@ class _Login_option_State extends State<Login_option_> {
                     )),
                 Container(
                   alignment: AlignmentDirectional.topStart,
-                  padding: EdgeInsets.symmetric(horizontal: 55),
+                  padding: EdgeInsets.symmetric(horizontal: 50),
+                  height: 250,
                   child: Text(
                       'With the PIXENT, \nyou can download thousands of beautiful wallpapers and create your own personal gallery. You can share them via social media or use them as inspiration for your latest project.',
                       style: GoogleFonts.rubik(
                           textStyle: const TextStyle(
                               color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w300,
                               fontStyle: FontStyle.italic))),
                 ),
-                SizedBox(height: 16,),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal : 50),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: SlideAction(
-                      trackBuilder: (context, state) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color.fromARGB(255, 255, 190, 11),
-                            border: Border.all(width: 2),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black,
-                                offset: Offset(3, 3)
-                              ),
-                            ],
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Sign up",style: TextStyle(
-                              fontSize: 30,
-                              fontFamily: 'FONTH',
-                              color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                      thumbBuilder: (context, state) {
-                        return Container(
-                          margin: const EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 131, 188, 104),
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(width: 2),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black,
-                                offset: Offset(1, 1)
-                              ),
-                            ],
-                            
-                          ),
-                          child: const Center(
-                            child: Icon(
-                              Icons.chevron_right,
-                              color: Colors.white,
-                            ),
-                          ),
-                        );
-                      },
-                      action: () {
-                        debugPrint("Hello World",);
-                      },
-                    ),
-                  ),
+               const  SizedBox(
+                  height: 16,
                 ),
-                SizedBox(height: 16,),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal : 50),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: SlideAction(
-                      trackBuilder: (context, state) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color.fromARGB(255, 255, 190, 11),
-                            border: Border.all(width: 2),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black,
-                                offset: Offset(3, 3)
-                              ),
-                            ],
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Sign up",style: TextStyle(
-                              fontSize: 30,
-                              fontFamily: 'FONTH',
-                              color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                      thumbBuilder: (context, state) {
-                        return Container(
-                          margin: const EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 131, 188, 104),
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(width: 2),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black,
-                                offset: Offset(1, 1)
-                              ),
-                            ],
-                            
-                          ),
-                          child: const Center(
-                            child: Icon(
-                              Icons.chevron_right,
-                              color: Colors.white,
-                            ),
-                          ),
-                        );
-                      },
-                      action: () {
-                        debugPrint("Hello World",);
-                      },
-                    ),
-                  ),
+                AppButtonDesingOne(
+                    bacgoundColor: AppColors.darkYelloColor,
+                    sliderColor: AppColors.greenDarkColor,
+                    text: 'SIGN IN',
+                    paddingsize: 50,
+                    onPressed: () => Get.to(()=>const SignIn()),),
+                const SizedBox(
+                  height: 16,
                 ),
-              
+                AppButtonDesingOne(
+                    bacgoundColor: AppColors.redColor,
+                    sliderColor: AppColors.greenDarkColor,
+                    text: 'SIGN UP',
+                    paddingsize: 50,
+                    onPressed: () => Get.to(()=>const SignUp()),)
               ],
             ),
           ),
