@@ -7,9 +7,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pixent/screen/login/sign_in.dart';
 import 'package:pixent/utility/widgets/app_button.dart';
-import 'package:pixent/utility/color.dart';
+import 'package:pixent/utility/colors/color.dart';
 
-import 'login/sign_up.dart';
+import 'sign_up.dart';
 
 class Login_option_ extends StatefulWidget {
   const Login_option_({super.key});
@@ -25,8 +25,8 @@ class _Login_option_State extends State<Login_option_> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * 1,
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 251, 84, 7),
+        decoration: BoxDecoration(
+          color: AppColors.orangeColor,
         ),
         child: Stack(fit: StackFit.expand, children: [
           Image.asset(
@@ -67,13 +67,13 @@ class _Login_option_State extends State<Login_option_> {
                               ..color = Colors.black,
                           ),
                         ),
-                        const Text(
+                         Text(
                           "PIXENT",
                           style: TextStyle(
                               fontSize: 100,
                               fontFamily: 'FONTH',
-                              color: Color.fromARGB(255, 255, 190, 11),
-                              shadows: <Shadow>[
+                              color: AppColors.darkYelloColor,
+                              shadows: const <Shadow>[
                                 Shadow(
                                   color: Colors.black,
                                   offset: Offset(4.0, 4.0),
