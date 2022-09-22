@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-import 'package:pixent/screen/login/sign_up.dart';
 import 'package:slide_action/slide_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -69,11 +67,7 @@ class AppButtonDesingOne extends StatelessWidget {
             );
           },
           action: () async {
-            await Future.delayed(
-              const Duration(seconds: 2),
-              (onPressed
-              )
-            );
+            await Future.delayed(const Duration(seconds: 2), (onPressed));
           },
         ),
       ),
