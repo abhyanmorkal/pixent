@@ -1,16 +1,16 @@
 import 'dart:ui';
 
 class AppColors{
-  static final Color darkYelloColor = const Color(0xffFFBE0B);
-  static final Color lightYellowColor = const Color(0xffFFFE03);
-  static final Color orangeColor = const Color(0xffFB5607);
-  static final Color redColor = const Color(0xffF90201);
-  static final Color purppleColor = const Color(0xff7133FF);
-  static final Color darkPinkColor = const Color(0xffDD0580);
-  static final Color lightPinkColor = const Color(0xffFDC0C0);
-  static final Color skinColor = const Color(0xffFCD0A9);
-  static final Color skeyBlueColor = const Color(0xff1C90F3);
-  static final Color greenDarkColor = const Color(0xff82BC68);
-  static final Color greenLightColor = const Color(0xff00EA86);
+  static const Color darkYelloColor = Color(0xffFFBE0B);
+  static const Color lightYellowColor =  Color(0xffFFFE03);
+  static const Color orangeColor =  Color(0xffFB5607);
+  static const Color redColor =  Color(0xffF90201);
+  static const Color purppleColor =  Color(0xff7133FF);
+  static const Color darkPinkColor =  Color(0xffDD0580);
+  static const Color lightPinkColor =  Color(0xffFDC0C0);
+  static const Color skinColor =  Color(0xffFCD0A9);
+  static const Color skeyBlueColor =  Color(0xff1C90F3);
+  static const Color greenDarkColor =  Color(0xff82BC68);
+  static const Color greenLightColor =  Color(0xff00EA86);
 
 }

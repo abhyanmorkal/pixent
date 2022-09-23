@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import '../colors/color.dart';
-
+import 'package:pixent/imports/imports.dart';
+// ignore: must_be_immutable
 class WelcomeText extends StatelessWidget {
   final String text;
   double fontSize;
