@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:slide_action/slide_action.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pixent/imports/imports.dart';
 
+// ignore: must_be_immutable
 class AppButtonDesingOne extends StatelessWidget {
   final Color bacgoundColor;
   final Color sliderColor;
@@ -21,6 +20,7 @@ class AppButtonDesingOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: paddingsize),
+      // ignore: sized_box_for_whitespace
       child: Container(
         width: MediaQuery.of(context).size.width,
         child: SlideAction(
@@ -67,7 +67,7 @@ class AppButtonDesingOne extends StatelessWidget {
             );
           },
           action: () async {
-            await Future.delayed(const Duration(seconds: 2), (onPressed));
+            await Future.delayed(const Duration(seconds: 1), (onPressed));
           },
         ),
       ),
