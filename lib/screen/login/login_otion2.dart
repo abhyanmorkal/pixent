@@ -92,24 +92,30 @@ class _Login_option_State extends State<Login_option_> {
                       ),
                     ),
                     const SizedBox(
-                      height: 16,
+                      height: 40,
                     ),
-                    AppButtonDesingOne(
-                      bacgoundColor: AppColors.darkYelloColor,
-                      sliderColor: AppColors.greenDarkColor,
-                      text: 'SIGN IN',
-                      paddingsize: 50,
-                      onPressed: () => Get.to(() => const SignIn()),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: AppButtonDesingOne(
+                        bacgoundColor: AppColors.darkYelloColor,
+                        sliderColor: AppColors.greenDarkColor,
+                        text: 'SIGN IN',
+                  
+                        onPressed: () => Get.to(() => const SignIn()),
+                      ),
                     ),
                     const SizedBox(
-                      height: 16,
+                      height: 20,
                     ),
-                    AppButtonDesingOne(
-                      bacgoundColor: AppColors.darkYelloColor,
-                      sliderColor: AppColors.greenDarkColor,
-                      text: 'SIGN UP',
-                      paddingsize: 50,
-                      onPressed: () => Get.to(() => const SignUp()),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: AppButtonDesingOne(
+                        bacgoundColor: AppColors.darkYelloColor,
+                        sliderColor: AppColors.greenDarkColor,
+                        text: 'SIGN UP',
+                        
+                        onPressed: () => Get.to(() => const SignUp()),
+                      ),
                     )
                   ],
                 ),
