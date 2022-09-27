@@ -12,8 +12,6 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  final _nameController = TextEditingController();
-  final _secondNameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   @override
@@ -21,7 +19,6 @@ class _SignInState extends State<SignIn> {
     return BackgroundImageWidget(
       image: AssetImage('assets/images/purplebackground2.png'),
       child: Stack(children: [
-        
         Container(
           decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -38,54 +35,59 @@ class _SignInState extends State<SignIn> {
                   Container(
                       // color: Colors.white,
                       child: Stack(
-                        children: [
-                          Center(
-                            child: Container(
-                              margin: EdgeInsets.only(top: 55,right: 5,left: 5),
-                              child: FittedBox(
-                                child: WelcomeText(
-                                    text: 'WELCOME',
-                                    color: AppColors.lightYellowColor,
-                                    fontSize: 60),
-                              ),
-                            ),
+                    children: [
+                      Center(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 70, right: 5, left: 5),
+                          child: FittedBox(
+                            child: WelcomeText(
+                                text: 'WELCOME',
+                                color: AppColors.lightYellowColor,
+                                fontSize: 60),
                           ),
-                          Center(
-                            child: Container(
-                              margin: EdgeInsets.only(top: 110),
-                              child: WelcomeText(
-                                  text: 'Geek - - -',
-                                  color: AppColors.lightYellowColor,
-                                  fontSize: 80),
-                            ),
+                        ),
+                      ),
+                      Center(
+                        child: FittedBox(
+                          child: Container(
+                            margin: const EdgeInsets.only(top: 140),
+                            child: WelcomeText(
+                                text: 'Back Geek',
+                                color: AppColors.lightYellowColor,
+                                fontSize: 70),
                           ),
-                        ],
-                      )),
-                      
+                        ),
+                      ),
+                    ],
+                  )),
                   Container(
                     width: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.symmetric(horizontal: 25),
                     height: 60,
                     // color: Colors.black,
                     child: FittedBox(
-                      child: Text('JOIN OUR COMMUNITY..',
+                      child: Text(
+                          "You can't please everyone. But we sure did try.",
                           style: GoogleFonts.rubik(
                               textStyle: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 24,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w500,
                                   fontStyle: FontStyle.italic))),
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Container(
-                    height: 65,
+                    height: 60,
                     // color: Colors.white,
                     child: WelcomeText(
-                        text: 'SIGN UP',
+                        text: 'Log In',
                         color: AppColors.lightYellowColor,
                         fontSize: 40),
                   ),
-                  
+
                   /*******************************
                    * 
                    * Form fild for sign up
@@ -93,7 +95,7 @@ class _SignInState extends State<SignIn> {
                    ***********************************/
                   Container(
                     // padding: EdgeInsets.symmetric(horizontal: 25),
-                    margin: EdgeInsets.symmetric(horizontal: 15),
+                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 40),
 
                     // height: 100,
 
@@ -105,28 +107,11 @@ class _SignInState extends State<SignIn> {
                         boxShadow: const [
                           BoxShadow(offset: Offset(4, 4), color: Colors.black)
                         ]),
+
                     child: Column(
                       children: [
                         const SizedBox(
-                          height: 15,
-                        ),
-                        InputTextField(
-                          hintText: 'Abhyan',
-                          isPssword: false,
-                          controller: _nameController,
-                          lebelText: 'First Name',
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        InputTextField(
-                          hintText: 'Morkal',
-                          isPssword: false,
-                          controller: _secondNameController,
-                          lebelText: 'Second Name',
-                        ),
-                        const SizedBox(
-                          height: 15,
+                          height: 25,
                         ),
                         InputTextField(
                           hintText: 'abhyan@gmail.com',
@@ -135,7 +120,7 @@ class _SignInState extends State<SignIn> {
                           lebelText: 'Email',
                         ),
                         const SizedBox(
-                          height: 15,
+                          height: 25,
                         ),
                         InputTextField(
                           hintText: 'Love@u@3000',
@@ -144,7 +129,7 @@ class _SignInState extends State<SignIn> {
                           lebelText: 'Password',
                         ),
                         const SizedBox(
-                          height: 15,
+                          height: 25,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -153,11 +138,36 @@ class _SignInState extends State<SignIn> {
                             sliderColor: AppColors.greenLightColor,
                             text: 'Nice..',
                             onPressed: (() =>
-                                Get.to(() => HomeScreenWidget())),
+                                Get.to(() => const HomeScreenWidget())),
                           ),
                         ),
                         const SizedBox(
-                          height: 15,
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children:  [
+                           const Text(
+                              'Not A Member ? ',
+                              style: TextStyle(
+                                  fontFamily: 'FONTH',
+                                  color: Colors.black54,
+                                  fontSize: 20),
+                            ),
+                            InkWell(
+                              onTap: ()=> Get.to(const SignUp(),transition: Transition.cupertino),
+                              child: const Text(
+                                'Register Now',
+                                style: TextStyle(
+                                    fontFamily: 'FONTH',
+                                    color: Colors.blue,
+                                    fontSize: 20),
+                              ),
+                            )
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
                         ),
                       ],
                     ),
@@ -181,7 +191,7 @@ class _SignInState extends State<SignIn> {
           ),
         ),
         Align(
-          alignment: const AlignmentDirectional(1, -0.5),
+          alignment: const AlignmentDirectional(1, -0.2),
           child: SvgPicture.asset(
             'assets/images/smile.svg',
             width: 80,
@@ -196,7 +206,7 @@ class _SignInState extends State<SignIn> {
             fit: BoxFit.contain,
           ),
         ),
-         Align(
+        Align(
           alignment: const AlignmentDirectional(-1, 0.7),
           child: SvgPicture.asset(
             'assets/images/Frame.svg',

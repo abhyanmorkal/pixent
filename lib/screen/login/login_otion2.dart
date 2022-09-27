@@ -101,7 +101,7 @@ class _Login_option_State extends State<Login_option_> {
                         sliderColor: AppColors.greenDarkColor,
                         text: 'SIGN IN',
                   
-                        onPressed: () => Get.to(() => const SignIn()),
+                        onPressed: () => Get.to(() => const SignIn(),transition: Transition.zoom),
                       ),
                     ),
                     const SizedBox(
@@ -114,7 +114,7 @@ class _Login_option_State extends State<Login_option_> {
                         sliderColor: AppColors.greenDarkColor,
                         text: 'SIGN UP',
                         
-                        onPressed: () => Get.to(() => const SignUp()),
+                        onPressed: () => Get.to(() => const SignUp(),transition: Transition.zoom),
                       ),
                     )
                   ],

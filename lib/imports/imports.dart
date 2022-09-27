@@ -24,3 +24,6 @@ export 'package:pixent/utility/font/welcome_text.dart';
 export 'package:slide_action/slide_action.dart';
 export 'package:cupertino_icons/cupertino_icons.dart';
 export 'package:animated_text_kit/animated_text_kit.dart';
+export 'package:google_nav_bar/google_nav_bar.dart';
+export 'package:pixent/imports/imports.dart';
+export 'package:pixent/utility/widgets/background_img_widget.dart';

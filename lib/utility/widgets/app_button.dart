@@ -33,7 +33,7 @@ class AppButtonDesingOne extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                state.isPerformingAction ? "LODING." : text,
+                state.isPerformingAction ? "LOADING." : text,
                 style:  TextStyle(
                   fontSize: 25,
                   fontFamily: 'FONTH',
