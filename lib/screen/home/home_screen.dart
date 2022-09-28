@@ -11,6 +11,7 @@ class HomeScreenWidget extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: Column(
           children: [
+            // ignore: sized_box_for_whitespace
             Container(
               // color: Colors.white,
               width: MediaQuery.of(context).size.width,

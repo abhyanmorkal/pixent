@@ -1,7 +1,7 @@
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pixent/imports/imports.dart';
 import 'package:pixent/screen/home/home_screen.dart';
-
-import '../../utility/widgets/background_img_widget.dart';
 import '../../utility/widgets/input_text.dart';
 
 class SignIn extends StatefulWidget {
@@ -12,12 +12,28 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  //============ text controller ==============
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  //============= sign in method ================
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim());
+  }
+
+  // @override
+  // Void dispose() {
+  //   _emailController.dispose();
+  //   _passwordController.dispose();
+  //   super.dispose();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return BackgroundImageWidget(
-      image: AssetImage('assets/images/purplebackground2.png'),
+      image: const AssetImage('assets/images/purplebackground2.png'),
       child: Stack(children: [
         Container(
           decoration: const BoxDecoration(
@@ -146,8 +162,8 @@ class _SignInState extends State<SignIn> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children:  [
-                           const Text(
+                          children: [
+                            const Text(
                               'Not A Member ? ',
                               style: TextStyle(
                                   fontFamily: 'FONTH',
@@ -155,7 +171,8 @@ class _SignInState extends State<SignIn> {
                                   fontSize: 20),
                             ),
                             InkWell(
-                              onTap: ()=> Get.to(const SignUp(),transition: Transition.cupertino),
+                              onTap: () => Get.to(const SignUp(),
+                                  transition: Transition.cupertino),
                               child: const Text(
                                 'Register Now',
                                 style: TextStyle(
