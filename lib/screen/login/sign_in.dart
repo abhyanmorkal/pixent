@@ -23,12 +23,13 @@ class _SignInState extends State<SignIn> {
         password: _passwordController.text.trim());
   }
 
-  // @override
-  // Void dispose() {
-  //   _emailController.dispose();
-  //   _passwordController.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,18 +44,20 @@ class _SignInState extends State<SignIn> {
                   colors: [AppColors.purppleColor, Colors.transparent])),
           child: Scaffold(
             backgroundColor: Colors.transparent,
+            // ignore: sized_box_for_whitespace
             body: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 1,
               child: SingleChildScrollView(
                 child: Column(children: [
+                  // ignore: avoid_unnecessary_containers
                   Container(
                       // color: Colors.white,
                       child: Stack(
                     children: [
                       Center(
                         child: Container(
-                          margin: EdgeInsets.only(top: 70, right: 5, left: 5),
+                          margin:const EdgeInsets.only(top: 70, right: 5, left: 5),
                           child: FittedBox(
                             child: WelcomeText(
                                 text: 'WELCOME',
