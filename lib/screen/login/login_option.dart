@@ -1,10 +1,14 @@
-import 'package:pixent/imports/imports.dart';
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginOptionWidget extends StatefulWidget {
   const LoginOptionWidget({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _LoginOptionWidgetState createState() => _LoginOptionWidgetState();
 }
 
@@ -15,16 +19,16 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
   Widget build(BuildContext context) {
     return Material(
       key: scaffoldKey,
-      color: const Color.fromARGB(255, 251, 84, 7),
+      color: Color.fromARGB(255, 251, 84, 7),
       child: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Align(
-            alignment: const AlignmentDirectional(0, 0),
+            alignment: AlignmentDirectional(0, 0),
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 1,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color.fromARGB(255, 251, 84, 7),
 
                 // color: FlutterFlowTheme.of(context).alternate,
@@ -32,7 +36,7 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
               child: Stack(
                 children: [
                   Align(
-                    alignment:const  AlignmentDirectional(0, 0),
+                    alignment: AlignmentDirectional(0, 0),
                     child: Image.asset(
                       'assets/images/background_overlay.png',
                       width: MediaQuery.of(context).size.width,
@@ -41,7 +45,7 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0, 0),
+                    alignment: AlignmentDirectional(0, 0),
                     child: SvgPicture.asset(
                       'assets/images/emogi.svg',
                       width: MediaQuery.of(context).size.width,
@@ -50,16 +54,18 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
                     ),
                   ),
                   Align(
-                    alignment:const  AlignmentDirectional(0, 0),
+                    alignment: AlignmentDirectional(0, 0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          // ignore: sized_box_for_whitespace
                           Container(
                             width: MediaQuery.of(context).size.width,
                             height: 184,
+                            decoration: BoxDecoration(
+                              color: Color(0x00FFBE0B),
+                            ),
                             child: Image.asset(
                               'assets/images/Text_Logo.png',
                               width: 324,
@@ -68,12 +74,13 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
                             ),
                           ),
                           Align(
-                            alignment:const  AlignmentDirectional(-0.7, 0),
-                            // ignore: sized_box_for_whitespace
+                            alignment: AlignmentDirectional(-0.7, 0),
                             child: Container(
                               width: 100,
                               height: 100,
-                              
+                              decoration: BoxDecoration(
+                                color: Color(0x00FFBE0B),
+                              ),
                               child: SvgPicture.asset(
                                 'assets/images/Logo.svg',
                                 width: 100,
@@ -84,10 +91,10 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
                           ),
                           Padding(
                             padding:
-                                const EdgeInsetsDirectional.fromSTEB(47, 0, 47, 0),
+                                EdgeInsetsDirectional.fromSTEB(47, 0, 47, 0),
                             child: Container(
                               width: double.infinity,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0x00FFBE0B),
                               ),
                               child: Text(
@@ -113,7 +120,7 @@ class _LoginOptionWidgetState extends State<LoginOptionWidget> {
                           Container(
                             width: double.infinity,
                             height: 180,
-                            decoration: const  BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Color(0x00FFBE0B),
                             ),
                             child: Column(
