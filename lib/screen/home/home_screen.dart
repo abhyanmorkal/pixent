@@ -1,5 +1,6 @@
-import 'package:card_swiper/card_swiper.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:pixent/imports/imports.dart';
+import 'package:pixent/utility/widgets/catagoury_card.dart';
 
 class HomeScreenWidget extends StatelessWidget {
   const HomeScreenWidget({super.key});
@@ -20,28 +21,14 @@ class HomeScreenWidget extends StatelessWidget {
               Container(
                 // color: Colors.white,
                 width: MediaQuery.of(context).size.width,
-                height: 150,
+                height: 100,
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      Center(
-                        child: Stack(
-                          children: [
-                            SvgPicture.asset('assets/images/profile.svg'),
-                            Container(
-                                width: 75,
-                                height: 75,
-                                decoration: BoxDecoration(
-                                  //  color: Colors.blue.shade100,
-                                  borderRadius: BorderRadius.circular(50),
-                                  image: const DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/doodle.png')),
-                                ))
-                          ],
-                        ),
-                      ),
+                     Container(
+                      height: 50,
+                      child: Image.asset('assets/images/profile.png')),
                       const SizedBox(
                         width: 20,
                       ),
@@ -51,11 +38,11 @@ class HomeScreenWidget extends StatelessWidget {
                           spacing: -20,
                           children: [
                             WelcomeText(
-                                text: 'Hey!',
+                                text: 'HEY!',
                                 color: AppColors.darkYelloColor,
                                 fontSize: 40),
                             WelcomeText(
-                                text: 'Rohit',
+                                text: 'ROHIT',
                                 color: AppColors.darkYelloColor,
                                 fontSize: 50),
                           ],
@@ -69,18 +56,81 @@ class HomeScreenWidget extends StatelessWidget {
               Container(
                 // color: Colors.white,
                 height: 200,
-                child: Swiper(
-                  itemBuilder: (BuildContext context, int index) {
-                    return Image.network(
-                      "https://via.placeholder.com/288x188",
-                      fit: BoxFit.fill,
-                    );
-                  },
-                  itemCount: 10,
-                  viewportFraction: 0.8,
-                  scale: 0.9,
+                child: CarouselSlider(
+                  items: [
+                    Container(
+                      decoration: BoxDecoration(
+                          image: const DecorationImage(
+                              image: AssetImage('assets/images/noimage.png'),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          image: const DecorationImage(
+                              image: AssetImage('assets/images/noimage1.png'),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          image: const DecorationImage(
+                              image: AssetImage('assets/images/noimage2.png'),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    Container(
+                      
+                      decoration: BoxDecoration(
+                          image: const DecorationImage(
+                              image: AssetImage('assets/images/noimage3.png'),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                  ],
+                  options: CarouselOptions(
+                      height: 300,
+                      viewportFraction: 0.85,
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                      autoPlayInterval: Duration(seconds: 3),
+                      autoPlayCurve: Curves.easeInOut),
                 ),
-              )
+              ),
+             const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                // color: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 25),
+                child: Text(
+                  'Catagoury',
+                  style: GoogleFonts.rubik(
+                      fontWeight: FontWeight.w900,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 25),
+                ),
+              ),
+               
+               Container(
+                height: 150,
+                 child: ListView(
+                  scrollDirection: Axis.horizontal,
+                   children:const [
+                   CatagouryCard(),
+                   CatagouryCard(),
+                   CatagouryCard(),
+                   CatagouryCard(),
+                   CatagouryCard(),
+                   CatagouryCard(),
+                   CatagouryCard(),
+                   
+                   
+                   ]
+                 ),
+               )
+              
             ],
           ),
         ),
